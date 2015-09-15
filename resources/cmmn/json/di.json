@@ -1,0 +1,115 @@
+{
+  "name": "DI",
+  "uri": "http://www.omg.org/spec/CMMN/20150516/DI",
+  "types": [
+    {
+      "name": "DiagramElement",
+      "isAbstract": true,
+      "properties": [
+        {
+          "name": "extension",
+          "type": "Extension"
+        },
+        {
+          "name": "style",
+          "type": "Style",
+          "isReference": true
+        },
+        {
+          "name": "sharedStyle",
+          "type": "Style",
+          "isReference": true,
+          "isAttr": true
+        },
+        {
+          "name": "id",
+          "type": "String",
+          "isAttr": true
+        }
+      ]
+    },
+
+    {
+      "name": "Edge",
+      "isAbstract": true,
+      "superClass": [
+        "DiagramElement"
+      ],
+      "properties": [
+        {
+          "name": "waypoint",
+          "isMany": true,
+          "type": "dc:Point",
+          "xml": {
+            "serialize": "xsi:type"
+          }
+        }
+      ]
+    },
+    {
+      "name": "Diagram",
+      "isAbstract": true,
+      "superClass": [
+        "DiagramElement"
+      ],
+      "properties": [
+        {
+          "name": "name",
+          "type": "String",
+          "isAttr": true
+        },
+        {
+          "name": "documentation",
+          "isAttr": true,
+          "type": "String"
+        },
+        {
+          "name": "resolution",
+          "isAttr": true,
+          "default": 300,
+          "type": "double"
+        }
+      ]
+    },
+    {
+      "name": "Shape",
+      "isAbstract": true,
+      "superClass": [
+        "DiagramElement"
+      ],
+      "properties": [
+        {
+          "name": "bounds",
+          "type": "dc:Bounds"
+        }
+      ]
+    },
+
+    {
+      "name": "Style",
+      "isAbstract": true,
+      "properties": [
+        {
+          "name": "extension",
+          "type": "Extension"
+        }
+      ]
+    },
+
+    {
+      "name": "Extension",
+      "properties": [
+        {
+          "name": "values",
+          "type": "Element",
+          "isMany": true
+        }
+      ]
+    }
+  ],
+  "associations": [],
+  "prefix": "di",
+  "xml": {
+    "tagAlias": "lowerCase"
+  }
+}

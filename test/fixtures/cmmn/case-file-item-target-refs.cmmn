@@ -1,0 +1,24 @@
+<?xml version="1.0" encoding="UTF-8" standalone="yes"?>
+<cmmn:definitions id="_ca088576-3bf8-48f1-96cc-ac71a2e4e213"
+                  targetNamespace="http://bpmn.io/schema/cmmn"
+                  xmlns:dc="http://www.omg.org/spec/CMMN/20150516/DC"
+                  xmlns:di="http://www.omg.org/spec/CMMN/20150516/DI"
+                  xmlns:cmmndi="http://www.omg.org/spec/CMMN/20150516/CMMNDI"
+                  xmlns:cmmn="http://www.omg.org/spec/CMMN/20150516/MODEL"
+                  xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
+
+  <cmmn:caseFileItemDefinition id="DEF__498ab57b-8a86-4e8f-bf4c-173a00f52a7c" />
+  <cmmn:caseFileItemDefinition id="DEF__55555555-8a86-4e8f-bf4c-173a00f52a7c" />
+  <cmmn:caseFileItemDefinition id="DEF__66666666-8a86-4e8f-bf4c-173a00f52a7c" />
+
+  <cmmn:case name="Simple" id="Case_d0ac33e6-d3bc-4bda-b48c-4a7a96b5f051">
+  
+    <cmmn:caseFileModel>
+      <cmmn:caseFileItem definitionRef="DEF__498ab57b-8a86-4e8f-bf4c-173a00f52a7c" id="_498ab57b-8a86-4e8f-bf4c-173a00f52a7c" targetRefs="_55555555-8a86-4e8f-bf4c-173a00f52a7c _66666666-8a86-4e8f-bf4c-173a00f52a7c" />
+      <cmmn:caseFileItem definitionRef="DEF__55555555-8a86-4e8f-bf4c-173a00f52a7c" id="_55555555-8a86-4e8f-bf4c-173a00f52a7c" sourceRef="_498ab57b-8a86-4e8f-bf4c-173a00f52a7c" />
+      <cmmn:caseFileItem definitionRef="DEF__66666666-8a86-4e8f-bf4c-173a00f52a7c" id="_66666666-8a86-4e8f-bf4c-173a00f52a7c" sourceRef="_498ab57b-8a86-4e8f-bf4c-173a00f52a7c" />
+    </cmmn:caseFileModel>
+
+  </cmmn:case>
+</cmmn:definitions>
+

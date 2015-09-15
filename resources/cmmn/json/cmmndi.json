@@ -1,0 +1,186 @@
+{
+  "name": "CMMNDI",
+  "uri": "http://www.omg.org/spec/CMMN/20150516/CMMNDI",
+  "types": [
+  	{
+  	  "name": "CMMNDI",
+  	  "properties": [
+  	    {
+  	      "name": "diagrams",
+  	      "type": "CMMNDiagram",
+  	      "isMany": true
+  	    },
+  	  	{
+  	  	  "name": "styles",
+  	  	  "type": "CMMNStyle",
+  	  	  "isMany": true
+  	  	}
+  	  ]
+  	},
+
+    {
+      "name": "CMMNDiagram",
+      "properties": [
+        {
+          "name": "cmmnElementRef",
+          "isAttr": true,
+          "type": "cmmn:CMMNElement",
+          "isReference": true
+        },
+        {
+          "name": "Size",
+          "type": "dc:Dimension",
+          "xml": {
+            "serialize": "xsi:type"
+          }
+        },
+        {
+          "name": "diagramElements",
+          "type": "CMMNDiagramElement",
+          "isMany": true
+        }
+      ],
+      "superClass": [
+        "di:Diagram"
+      ]
+    },
+
+    {
+      "name": "CMMNDiagramElement",
+      "superClass": [
+        "di:DiagramElement"
+      ]
+    },
+
+    {
+      "name": "CMMNShape",
+      "properties": [
+        {
+          "name": "cmmnElementRef",
+          "isAttr": true,
+          "isReference": true,
+          "type": "cmmn:CMMNElement"
+        },
+        {
+          "name": "label",
+          "type": "CMMNLabel"
+        },
+        {
+          "name": "isCollapsed",
+          "isAttr": true,
+          "type": "Boolean"
+        },
+        {
+          "name": "isPlanningTableCollapsed",
+          "isAttr": true,
+          "type": "Boolean"
+        }
+      ],
+      "superClass": [
+        "CMMNDiagramElement", "di:Shape"
+      ]
+    },
+    {
+      "name": "CMMNEdge",
+      "properties": [
+        {
+          "name": "label",
+          "type": "CMMNLabel"
+        },
+        {
+          "name": "cmmnElementRef",
+          "isAttr": true,
+          "isReference": true,
+          "type": "cmmn:CMMNElement"
+        },
+        {
+          "name": "sourceCMMNElementRef",
+          "isAttr": true,
+          "isReference": true,
+          "type": "cmmn:CMMNElement"
+        },
+        {
+          "name": "targetCMMNElementRef",
+          "isAttr": true,
+          "isReference": true,
+          "type": "cmmn:CMMNElement"
+        },
+        {
+          "name": "isStandardEventVisible",
+          "type": "Boolean",
+          "isAttr": true
+        }
+      ],
+      "superClass": [
+        "CMMNDiagramElement", "di:Edge"
+      ]
+    },
+    {
+      "name": "CMMNLabel",
+      "superClass": [
+        "di:Shape"
+      ]
+    },
+    {
+      "name": "CMMNStyle",
+      "properties": [
+        {
+          "name": "FillColor",
+          "type": "dc:Color",
+          "xml": {
+            "serialize": "xsi:type"
+          }
+        },
+        {
+          "name": "StrokeColor",
+          "type": "dc:Color",
+          "xml": {
+            "serialize": "xsi:type"
+          }
+        },
+        {
+          "name": "FontColor",
+          "type": "dc:Color",
+          "xml": {
+            "serialize": "xsi:type"
+          }
+        },
+        {
+          "name": "fontFamily",
+          "type": "String",
+          "isAttr": true
+        },
+        {
+          "name": "fontSize",
+          "type": "Real",
+          "isAttr": true
+        },
+        {
+          "name": "fontItalic",
+          "type": "Boolean",
+          "isAttr": true
+        },
+        {
+          "name": "fontBold",
+          "type": "Boolean",
+          "isAttr": true
+        },
+        {
+          "name": "fontUnderline",
+          "type": "Boolean",
+          "isAttr": true
+        },
+        {
+          "name": "fontStrikeThrough",
+          "type": "Boolean",
+          "isAttr": true
+        }
+      ],
+      "superClass": [
+        "di:Style"
+      ]
+    }
+  ],
+  "associations": [],
+  "prefix": "cmmndi"
+}

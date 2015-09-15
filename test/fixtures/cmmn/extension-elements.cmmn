@@ -1,0 +1,14 @@
+<?xml version="1.0" encoding="UTF-8" standalone="yes"?>
+<cmmn:definitions id="test"
+                  targetNamespace="http://bpmn.io/schema/cmmn"
+                  xmlns:cmmn="http://www.omg.org/spec/CMMN/20150516/MODEL"
+                  xmlns:vendor="http://vendor"
+                  xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
+
+  <cmmn:extensionElements>
+    <vendor:info key="bgcolor" value="#ffffff"/>
+    <vendor:info key="role" value="[]"/>
+  </cmmn:extensionElements>
+
+</cmmn:definitions>
+

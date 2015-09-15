@@ -1,0 +1,1343 @@
+{
+  "name": "CMMN",
+  "uri": "http://www.omg.org/spec/CMMN/20150516/MODEL",
+  "types": [
+    {
+      "name": "ApplicabilityRule",
+      "superClass": [
+        "CMMNElement"
+      ],
+      "properties": [
+        {
+          "name": "condition",
+          "type": "Expression"
+        },
+        {
+          "name": "contextRef",
+          "type": "CaseFileItem",
+          "isAttr": true,
+          "isReference": true
+        },
+        {
+          "name": "name",
+          "isAttr": true,
+          "type": "String"
+        }
+      ]
+    },
+    {
+      "name": "ManualActivationRule",
+      "superClass": [
+        "CMMNElement"
+      ],
+      "properties": [
+        {
+          "name": "condition",
+          "type": "Expression"
+        },
+        {
+          "name": "name",
+          "isAttr": true,
+          "type": "String"
+        },
+        {
+          "name": "contextRef",
+          "type": "CaseFileItem",
+          "isAttr": true,
+          "isReference": true
+        }
+      ]
+    },
+    {
+      "name": "Case",
+      "superClass": [
+        "CMMNElement"
+      ],
+      "properties": [
+        {
+          "name": "name",
+          "isAttr": true,
+          "type": "String"
+        },
+        {
+          "name": "caseFileModel",
+          "type": "CaseFile",
+          "xml": {
+            "serialize": "property"
+          }
+        },
+        {
+          "name": "casePlanModel",
+          "type": "Stage",
+          "xml": {
+            "serialize": "property"
+          }
+        },
+        {
+          "name": "caseRoles",
+          "type": "Role",
+          "isMany": true,
+          "xml": {
+            "serialize": "property"
+          }
+        },
+        {
+          "name": "input",
+          "type": "CaseParameter",
+          "isMany": true,
+          "xml": {
+            "serialize": "property"
+          }
+        },
+        {
+          "name": "output",
+          "type": "CaseParameter",
+          "isMany": true,
+          "xml": {
+            "serialize": "property"
+          }
+        }
+      ]
+    },
+    {
+      "name": "CaseFile",
+      "superClass": [
+        "CMMNElement"
+      ],
+      "properties": [
+        {
+          "name": "caseFileItems",
+          "type": "CaseFileItem",
+          "isMany": true
+        }
+      ]
+    },
+    {
+      "name": "CaseFileItem",
+      "superClass": [
+        "CMMNElement"
+      ],
+      "properties": [
+        {
+          "name": "name",
+          "isAttr": true,
+          "type": "String"
+        },
+        {
+          "name": "multiplicity",
+          "type": "String",
+          "isAttr": true,
+          "default": "Unspecified"
+        },
+        {
+          "name": "definitionRef",
+          "type": "CaseFileItemDefinition",
+          "isAttr": true,
+          "isReference": true
+        },
+        {
+          "name": "sourceRef",
+          "type": "CaseFileItem",
+          "isAttr": true,
+          "isReference": true
+        },
+        {
+          "name": "targetRefs",
+          "type": "CaseFileItem",
+          "isAttr": true,
+          "isReference": true,
+          "isMany": true
+        },
+        {
+          "name": "children",
+          "type": "CaseFileItem",
+          "isMany": true,
+          "xml": {
+            "serialize": "property"
+          }
+        }
+      ]
+    },
+    {
+      "name": "CaseFileItemDefinition",
+      "superClass": [
+        "CMMNElement"
+      ],
+      "properties": [
+        {
+          "name": "name",
+          "isAttr": true,
+          "type": "String"
+        },
+        {
+          "name": "definitionType",
+          "type": "String",
+          "default": "http://www.omg.org/spec/CMMN/DefinitionType/Unspecified",
+          "isAttr": true
+        },
+        {
+          "name": "properties",
+          "type": "Property",
+          "isMany": true
+        },
+        {
+          "name": "structureRef",
+          "type": "String",
+          "isAttr": true
+        },
+        {
+          "name": "importRef",
+          "type": "Import",
+          "isAttr": true,
+          "isReference": true
+        }
+      ]
+    },
+    {
+      "name": "CaseFileItemOnPart",
+      "superClass": [
+        "OnPart"
+      ],
+      "properties": [
+        {
+          "name": "standardEvent",
+          "type": "String"
+        },
+        {
+          "name": "sourceRef",
+          "type": "CaseFileItem",
+          "isAttr": true,
+          "isReference": true
+        }
+      ]
+    },
+    {
+      "name": "CaseParameter",
+      "superClass": [
+        "Parameter"
+      ],
+      "properties": [
+        {
+          "name": "bindingRef",
+          "type": "CaseFileItem",
+          "isAttr": true,
+          "isReference": true
+        },
+        {
+          "name": "bindingRefinement",
+          "type": "Expression"
+        }
+      ]
+    },
+    {
+      "name": "CaseTask",
+      "superClass": [
+        "Task"
+      ],
+      "properties": [
+        {
+          "name": "parameterMapping",
+          "type": "ParameterMapping",
+          "isMany": true
+        },
+        {
+          "name": "caseRefExpression",
+          "type": "Expression"
+        },
+        {
+          "name": "caseRef",
+          "type": "Case",
+          "isAttr": true,
+          "isReference": true
+        }
+      ]
+    },
+    {
+      "name": "CMMNElement",
+      "isAbstract": true,
+      "properties": [
+        {
+          "name": "id",
+          "isAttr": true,
+          "type": "String"
+        },
+        {
+          "name": "documentation",
+          "type": "Documentation",
+          "isMany": true
+        },
+        {
+          "name": "extensionElements",
+          "type": "ExtensionElements"
+        },
+        {
+          "name": "extensionDefinitions",
+          "type": "ExtensionDefinition",
+          "isReference": true,
+          "isMany": true
+        }
+      ]
+    },
+    {
+      "name": "Definitions",
+      "superClass": [
+        "CMMNElement"
+      ],
+      "properties": [
+        {
+          "name": "name",
+          "isAttr": true,
+          "type": "String"
+        },
+        {
+          "name": "targetNamespace",
+          "type": "String",
+          "isAttr": true
+        },
+        {
+          "name": "expressionLanguage",
+          "type": "String",
+          "isAttr": true,
+          "default": "http://www.w3.org/1999/XPath"
+        },
+        {
+          "name": "exporter",
+          "isAttr": true,
+          "type": "String"
+        },
+        {
+          "name": "exporterVersion",
+          "isAttr": true,
+          "type": "String"
+        },
+        {
+          "name": "author",
+          "isAttr": true,
+          "type": "String"
+        },
+        {
+          "name": "creationDate",
+          "type": "DateTime",
+          "isAttr": true
+        },
+        {
+          "name": "imports",
+          "type": "Import",
+          "isMany": true
+        },
+        {
+          "name": "caseFileItemDefinitions",
+          "type": "CaseFileItemDefinition",
+          "isMany": true
+        },
+        {
+          "name": "cases",
+          "type": "Case",
+          "isMany": true
+        },
+        {
+          "name": "processes",
+          "type": "Process",
+          "isMany": true
+        },
+        {
+          "name": "decisions",
+          "type": "Decision",
+          "isMany": true
+        },
+        {
+          "name": "extensions",
+          "type": "Extension",
+          "isMany": true
+        },
+        {
+          "name": "relationships",
+          "type": "Relationship",
+          "isMany": true
+        },
+        {
+          "name": "CMMNDI",
+          "type": "cmmndi:CMMNDI"
+        }
+      ]
+    },
+    {
+      "name": "DiscretionaryItem",
+      "superClass": [
+        "TableItem"
+      ],
+      "properties": [
+        {
+          "name": "itemControl",
+          "type": "PlanItemControl"
+        },
+        {
+          "name": "definitionRef",
+          "type": "PlanItemDefinition",
+          "isAttr": true,
+          "isReference": true
+        },
+        {
+          "name": "name",
+          "isAttr": true,
+          "type": "String"
+        },
+        {
+          "name": "entryCriteria",
+          "type": "EntryCriterion",
+          "isMany": true
+        },
+        {
+          "name": "exitCriteria",
+          "type": "ExitCriterion",
+          "isMany": true
+        }
+      ]
+    },
+    {
+      "name": "EventListener",
+      "superClass": [
+        "PlanItemDefinition"
+      ]
+    },
+    {
+      "name": "Expression",
+      "superClass": [
+        "CMMNElement"
+      ],
+      "properties": [
+        {
+          "name": "language",
+          "type": "String",
+          "isAttr": true
+        },
+        {
+          "name": "body",
+          "isBody": true,
+          "type": "String"
+        }
+      ]
+    },
+    {
+      "name": "HumanTask",
+      "superClass": [
+        "Task"
+      ],
+      "properties": [
+        {
+          "name": "planningTable",
+          "type": "PlanningTable"
+        },
+        {
+          "name": "performerRef",
+          "type": "Role",
+          "isAttr": true,
+          "isReference": true
+        }
+      ]
+    },
+    {
+      "name": "IfPart",
+      "superClass": [
+        "CMMNElement"
+      ],
+      "properties": [
+        {
+          "name": "contextRef",
+          "type": "CaseFileItem",
+          "isAttr": true,
+          "isReference": true
+        },
+        {
+          "name": "condition",
+          "type": "Expression"
+        }
+      ]
+    },
+    {
+      "name": "Import",
+      "properties": [
+        {
+          "name": "location",
+          "isAttr": true,
+          "type": "String"
+        },
+        {
+          "name": "namespace",
+          "type": "String",
+          "isAttr": true
+        },
+        {
+          "name": "importType",
+          "isAttr": true,
+          "type": "String"
+        }
+      ]
+    },
+    {
+      "name": "Milestone",
+      "superClass": [
+        "PlanItemDefinition"
+      ]
+    },
+    {
+      "name": "On",
+      "isAbstract": true,
+      "superClass": [
+        "CMMNElement"
+      ]
+    },
+    {
+      "name": "OnPart",
+      "isAbstract": true,
+      "superClass": [
+        "CMMNElement"
+      ],
+      "properties": [
+        {
+          "name": "name",
+          "isAttr": true,
+          "type": "String"
+        }
+      ]
+    },
+    {
+      "name": "Parameter",
+      "isAbstract": true,
+      "superClass": [
+        "CMMNElement"
+      ],
+      "properties": [
+        {
+          "name": "name",
+          "isAttr": true,
+          "type": "String"
+        }
+      ]
+    },
+    {
+      "name": "ParameterMapping",
+      "properties": [
+        {
+          "name": "sourceRef",
+          "type": "Parameter",
+          "isAttr": true,
+          "isReference": true
+        },
+        {
+          "name": "targetRef",
+          "type": "Parameter",
+          "isAttr": true,
+          "isReference": true
+        },
+        {
+          "name": "transformation",
+          "type": "Expression"
+        }
+      ]
+    },
+    {
+      "name": "PlanFragment",
+      "superClass": [
+        "PlanItemDefinition"
+      ],
+      "properties": [
+        {
+          "name": "planItems",
+          "type": "PlanItem",
+          "isMany": true
+        },
+        {
+          "name": "sentries",
+          "type": "Sentry",
+          "isMany": true
+        }
+      ]
+    },
+    {
+      "name": "PlanItem",
+      "superClass": [
+        "CMMNElement"
+      ],
+      "properties": [
+        {
+          "name": "name",
+          "isAttr": true,
+          "type": "String"
+        },
+        {
+          "name": "definitionRef",
+          "type": "PlanItemDefinition",
+          "isAttr": true,
+          "isReference": true
+        },
+        {
+          "name": "entryCriteria",
+          "type": "EntryCriterion",
+          "isMany": true
+        },
+        {
+          "name": "exitCriteria",
+          "type": "ExitCriterion",
+          "isMany": true
+        },
+        {
+          "name": "itemControl",
+          "type": "PlanItemControl"
+        }
+      ]
+    },
+    {
+      "name": "PlanItemControl",
+      "superClass": [
+        "CMMNElement"
+      ],
+      "properties": [
+        {
+          "name": "repetitionRule",
+          "type": "RepetitionRule"
+        },
+        {
+          "name": "requiredRule",
+          "type": "RequiredRule"
+        },
+        {
+          "name": "manualActivationRule",
+          "type": "ManualActivationRule"
+        }
+      ]
+    },
+    {
+      "name": "PlanItemDefinition",
+      "isAbstract": true,
+      "superClass": [
+        "CMMNElement"
+      ],
+      "properties": [
+        {
+          "name": "name",
+          "isAttr": true,
+          "type": "String"
+        },
+        {
+          "name": "defaultControl",
+          "type": "PlanItemControl"
+        }
+      ]
+    },
+    {
+      "name": "PlanItemOnPart",
+      "superClass": [
+        "OnPart"
+      ],
+      "properties": [
+        {
+          "name": "standardEvent",
+          "type": "String"
+        },
+        {
+          "name": "sourceRef",
+          "type": "PlanItem",
+          "isAttr": true,
+          "isReference": true
+        },
+        {
+          "name": "sentryRef",
+          "type": "Sentry",
+          "isAttr": true,
+          "isReference": true
+        },
+        {
+          "name": "exitCriterionRef",
+          "type": "ExitCriterion",
+          "isAttr": true,
+          "isReference": true
+        }
+      ]
+    },
+    {
+      "name": "PlanningTable",
+      "superClass": [
+        "TableItem"
+      ],
+      "properties": [
+        {
+          "name": "tableItems",
+          "type": "TableItem",
+          "isMany": true
+        },
+        {
+          "name": "applicabilityRules",
+          "type": "ApplicabilityRule",
+          "isMany": true
+        }
+      ]
+    },
+    {
+      "name": "Process",
+      "superClass": [
+        "CMMNElement"
+      ],
+      "properties": [
+        {
+          "name": "name",
+          "isAttr": true,
+          "type": "String"
+        },
+        {
+          "name": "implementationType",
+          "type": "String",
+          "isAttr": true,
+          "default": "http://www.omg.org/spec/CMMN/ProcessType/Unspecified"
+        },
+        {
+          "name": "externalRef",
+          "type": "String",
+          "isAttr": true
+        },
+        {
+          "name": "input",
+          "type": "ProcessParameter",
+          "isMany": true,
+          "xml": {
+            "serialize": "property"
+          }
+        },
+        {
+          "name": "output",
+          "type": "ProcessParameter",
+          "isMany": true,
+          "xml": {
+            "serialize": "property"
+          }
+        }
+      ]
+    },
+    {
+      "name": "ProcessParameter",
+      "superClass": [
+        "Parameter"
+      ]
+    },
+    {
+      "name": "ProcessTask",
+      "superClass": [
+        "Task"
+      ],
+      "properties": [
+        {
+          "name": "parameterMapping",
+          "type": "ParameterMapping",
+          "isMany": true
+        },
+        {
+          "name": "processRefExpression",
+          "type": "Expression"
+        },
+        {
+          "name": "processRef",
+          "type": "Process",
+          "isAttr": true,
+          "isReference": true
+        }
+      ]
+    },
+    {
+      "name": "Property",
+      "superClass": [
+        "CMMNElement"
+      ],
+      "properties": [
+        {
+          "name": "name",
+          "isAttr": true,
+          "type": "String"
+        },
+        {
+          "name": "type",
+          "type": "String",
+          "isAttr": true,
+          "default": "http://www.omg.org/spec/CMMN/PropertyType/Unspecified"
+        }
+      ]
+    },
+    {
+      "name": "RepetitionRule",
+      "superClass": [
+        "CMMNElement"
+      ],
+      "properties": [
+        {
+          "name": "condition",
+          "type": "Expression"
+        },
+        {
+          "name": "name",
+          "isAttr": true,
+          "type": "String"
+        },
+        {
+          "name": "contextRef",
+          "type": "CaseFileItem",
+          "isAttr": true,
+          "isReference": true
+        }
+      ]
+    },
+    {
+      "name": "RequiredRule",
+      "superClass": [
+        "CMMNElement"
+      ],
+      "properties": [
+        {
+          "name": "condition",
+          "type": "Expression"
+        },
+        {
+          "name": "name",
+          "isAttr": true,
+          "type": "String"
+        },
+        {
+          "name": "contextRef",
+          "type": "CaseFileItem",
+          "isAttr": true,
+          "isReference": true
+        }
+      ]
+    },
+    {
+      "name": "Role",
+      "superClass": [
+        "CMMNElement"
+      ],
+      "properties": [
+        {
+          "name": "name",
+          "isAttr": true,
+          "type": "String"
+        }
+      ]
+    },
+    {
+      "name": "Sentry",
+      "superClass": [
+        "CMMNElement"
+      ],
+      "properties": [
+        {
+          "name": "onParts",
+          "type": "OnPart",
+          "isMany": true
+        },
+        {
+          "name": "ifPart",
+          "type": "IfPart"
+        },
+        {
+          "name": "name",
+          "isAttr": true,
+          "type": "String"
+        }
+      ]
+    },
+    {
+      "name": "Stage",
+      "superClass": [
+        "PlanFragment"
+      ],
+      "properties": [
+        {
+          "name": "planningTable",
+          "type": "PlanningTable"
+        },
+        {
+          "name": "planItemDefinitions",
+          "type": "PlanItemDefinition",
+          "isMany": true
+        },
+        {
+          "name": "autoComplete",
+          "isAttr": true,
+          "type": "Boolean"
+        },
+        {
+          "name": "exitCriteria",
+          "type": "ExitCriterion",
+          "isMany": true
+        }
+      ]
+    },
+    {
+      "name": "TableItem",
+      "isAbstract": true,
+      "superClass": [
+        "CMMNElement"
+      ],
+      "properties": [
+        {
+          "name": "planningTable",
+          "type": "PlanningTable",
+          "isAttr": true
+        },
+        {
+          "name": "authorizedRoleRefs",
+          "type": "Role",
+          "isAttr": true,
+          "isReference": true,
+          "isMany": true
+        },
+        {
+          "name": "applicabilityRuleRefs",
+          "type": "ApplicabilityRule",
+          "isAttr": true,
+          "isReference": true,
+          "isMany": true
+        }
+      ]
+    },
+    {
+      "name": "Task",
+      "superClass": [
+        "PlanItemDefinition"
+      ],
+      "properties": [
+        {
+          "name": "inputs",
+          "type": "CaseParameter",
+          "isMany": true
+        },
+        {
+          "name": "outputs",
+          "type": "CaseParameter",
+          "isMany": true
+        },
+        {
+          "name": "isBlocking",
+          "isAttr": true,
+          "default": true,
+          "type": "Boolean"
+        }
+      ]
+    },
+    {
+      "name": "TimerEventListener",
+      "superClass": [
+        "EventListener"
+      ],
+      "properties": [
+        {
+          "name": "timerExpression",
+          "type": "Expression"
+        },
+        {
+          "name": "timerStart",
+          "type": "StartTrigger"
+        }
+      ]
+    },
+    {
+      "name": "UserEventListener",
+      "superClass": [
+        "EventListener"
+      ],
+      "properties": []
+    },
+    {
+      "name": "DateTime",
+      "superClass": []
+    },
+    {
+      "name": "StartTrigger",
+      "isAbstract": true,
+      "superClass": [
+        "CMMNElement"
+      ]
+    },
+    {
+      "name": "PlanItemStartTrigger",
+      "superClass": [
+        "StartTrigger"
+      ],
+      "properties": [
+        {
+          "name": "standardEvent",
+          "type": "String",
+          "isAttr": true
+        },
+        {
+          "name": "sourceRef",
+          "type": "PlanItem",
+          "isAttr": true,
+          "isReference": true
+        }
+      ]
+    },
+    {
+      "name": "CaseFileItemStartTrigger",
+      "superClass": [
+        "StartTrigger"
+      ],
+      "properties": [
+        {
+          "name": "standardEvent",
+          "type": "String",
+          "isAttr": true
+        },
+        {
+          "name": "sourceRef",
+          "type": "CaseFileItem",
+          "isAttr": true,
+          "isReference": true
+        }
+      ]
+    },
+    {
+      "name": "Extension",
+      "properties": [
+        {
+          "name": "mustUnderstand",
+          "default": false,
+          "isAttr": true,
+          "type": "Boolean"
+        },
+        {
+          "name": "definition",
+          "type": "ExtensionDefinition"
+        }
+      ]
+    },
+    {
+      "name": "ExtensionDefinition",
+      "properties": [
+        {
+          "name": "name",
+          "isAttr": true,
+          "type": "String"
+        },
+        {
+          "name": "extensionAttributeDefinitions",
+          "type": "ExtensionAttributeDefinition",
+          "isMany": true
+        }
+      ]
+    },
+    {
+      "name": "ExtensionAttributeDefinition",
+      "properties": [
+        {
+          "name": "name",
+          "isAttr": true,
+          "type": "String"
+        },
+        {
+          "name": "type",
+          "isAttr": true,
+          "type": "String"
+        },
+        {
+          "name": "isReference",
+          "isAttr": true,
+          "default": false,
+          "type": "Boolean"
+        }
+      ]
+    },
+    {
+      "name": "ExtensionElements",
+      "properties": [
+        {
+          "name": "valueRef",
+          "isAttr": true,
+          "isReference": true,
+          "type": "Element"
+        },
+        {
+          "name": "values",
+          "type": "Element",
+          "isMany": true
+        },
+        {
+          "name": "extensionAttributeDefinition",
+          "type": "ExtensionAttributeDefinition",
+          "isAttr": true,
+          "isReference": true
+        }
+      ]
+    },
+    {
+      "name": "Relationship",
+      "properties": [
+        {
+          "name": "type",
+          "isAttr": true,
+          "type": "String"
+        },
+        {
+          "name": "direction",
+          "type": "RelationshipDirection",
+          "isAttr": true
+        },
+        {
+          "name": "source",
+          "isAttr": true,
+          "isMany": true,
+          "type": "Element"
+        },
+        {
+          "name": "target",
+          "isAttr": true,
+          "isMany": true,
+          "type": "Element"
+        }
+      ]
+    },
+    {
+      "name": "Documentation",
+      "superClass": [
+        "CMMNElement"
+      ],
+      "properties": [
+        {
+          "name": "text",
+          "isAttr": true,
+          "type": "String"
+        },
+        {
+          "name": "textFormat",
+          "default": "text/plain",
+          "isAttr": true,
+          "type": "String"
+        }
+      ]
+    },
+    {
+      "name": "DecisionTask",
+      "superClass": [
+        "Task"
+      ],
+      "properties": [
+        {
+          "name": "mappings",
+          "type": "ParameterMapping",
+          "isMany": true
+        },
+        {
+          "name": "decisionRef",
+          "type": "Decision",
+          "isAttr": true,
+          "isReference": true
+        },
+        {
+          "name": "decisionRefExpression",
+          "type": "Expression"
+        }
+      ]
+    },
+    {
+      "name": "Decision",
+      "superClass": [
+        "CMMNElement"
+      ],
+      "properties": [
+        {
+          "name": "name",
+          "isAttr": true,
+          "type": "String"
+        },
+        {
+          "name": "implementationType",
+          "type": "String",
+          "isAttr": true
+        },
+        {
+          "name": "inputs",
+          "type": "DecisionParameter",
+          "isMany": true
+        },
+        {
+          "name": "outputs",
+          "type": "DecisionParameter",
+          "isMany": true
+        },
+        {
+          "name": "externalRef",
+          "type": "String",
+          "isAttr": true
+        }
+      ]
+    },
+    {
+      "name": "DecisionParameter",
+      "superClass": [
+        "Parameter"
+      ]
+    },
+    {
+      "name": "Criterion",
+      "isAbstract": true,
+      "superClass": [
+        "CMMNElement"
+      ],
+      "properties": [
+        {
+          "name": "name",
+          "isAttr": true,
+          "type": "String"
+        },
+        {
+          "name": "sentryRef",
+          "type": "Sentry",
+          "isAttr": true,
+          "isReference": true
+        }
+      ]
+    },
+    {
+      "name": "EntryCriterion",
+      "superClass": [
+        "Criterion"
+      ]
+    },
+    {
+      "name": "ExitCriterion",
+      "superClass": [
+        "Criterion"
+      ]
+    }
+  ],
+  "emumerations": [
+    {
+      "name": "CaseFileItemTransition",
+      "literalValues": [
+        {
+          "name": "addChild"
+        },
+        {
+          "name": "addReference"
+        },
+        {
+          "name": "create"
+        },
+        {
+          "name": "delete"
+        },
+        {
+          "name": "removeChild"
+        },
+        {
+          "name": "removeReference"
+        },
+        {
+          "name": "replace"
+        },
+        {
+          "name": "update"
+        }
+      ]
+    },
+    {
+      "name": "MultiplicityEnum",
+      "literalValues": [
+        {
+          "name": "ZeroOrOne"
+        },
+        {
+          "name": "ZeroOrMore"
+        },
+        {
+          "name": "ExactlyOne"
+        },
+        {
+          "name": "OneOrMore"
+        },
+        {
+          "name": "Unspecified"
+        },
+        {
+          "name": "Unknown"
+        }
+      ]
+    },
+    {
+      "name": "PlanItemTransition",
+      "literalValues": [
+        {
+          "name": "close"
+        },
+        {
+          "name": "complete"
+        },
+        {
+          "name": "create"
+        },
+        {
+          "name": "disable"
+        },
+        {
+          "name": "enable"
+        },
+        {
+          "name": "exit"
+        },
+        {
+          "name": "fault"
+        },
+        {
+          "name": "manualStart"
+        },
+        {
+          "name": "occur"
+        },
+        {
+          "name": "parentResume"
+        },
+        {
+          "name": "parentSuspend"
+        },
+        {
+          "name": "reactivate"
+        },
+        {
+          "name": "reenable"
+        },
+        {
+          "name": "resume"
+        },
+        {
+          "name": "start"
+        },
+        {
+          "name": "suspend"
+        },
+        {
+          "name": "terminate"
+        }
+      ]
+    },
+    {
+      "name": "RelationshipDirection",
+      "literalValues": [
+        {
+          "name": "None"
+        },
+        {
+          "name": "Forward"
+        },
+        {
+          "name": "Backward"
+        },
+        {
+          "name": "Both"
+        }
+      ]
+    }
+  ],
+  "associations": [],
+  "xml": {
+    "tagAlias": "lowerCase",
+    "typePrefix": "t"
+  },
+  "prefix": "cmmn"
+}

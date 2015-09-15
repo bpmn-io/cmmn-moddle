@@ -1,0 +1,81 @@
+<?xml version="1.0" encoding="UTF-8" standalone="yes"?>
+<cmmn:definitions id="_ca088576-3bf8-48f1-96cc-ac71a2e4e213"
+                  targetNamespace="http://bpmn.io/schema/cmmn"
+                  xmlns:dc="http://www.omg.org/spec/CMMN/20150516/DC"
+                  xmlns:di="http://www.omg.org/spec/CMMN/20150516/DI"
+                  xmlns:cmmndi="http://www.omg.org/spec/CMMN/20150516/CMMNDI"
+                  xmlns:cmmn="http://www.omg.org/spec/CMMN/20150516/MODEL"
+                  xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
+  <cmmn:caseFileItemDefinition id="DEF__498ab57b-8a86-4e8f-bf4c-173a00f52a7c"/>
+
+  <cmmn:case name="Simple" id="Case_d0ac33e6-d3bc-4bda-b48c-4a7a96b5f051">
+  
+    <cmmn:caseFileModel>
+      <cmmn:caseFileItem definitionRef="DEF__498ab57b-8a86-4e8f-bf4c-173a00f52a7c" id="_498ab57b-8a86-4e8f-bf4c-173a00f52a7c"/>
+    </cmmn:caseFileModel>
+
+    <cmmn:casePlanModel autoComplete="false"
+                        name="Simple"
+                        id="_d0ac33e6-d3bc-4bda-b48c-4a7a96b5f051">
+
+      <cmmn:planItem definitionRef="_b20f18b7-6ebe-45cb-a643-2e5ff2ecfd4e"
+                     id="PI_b20f18b7-6ebe-45cb-a643-2e5ff2ecfd4e"/>
+
+      <cmmn:planItem definitionRef="_1df7f224-d649-4e2d-9323-e6e7a70908b2"
+                     id="PI_1df7f224-d649-4e2d-9323-e6e7a70908b2">
+        <cmmn:entryCriterion sentryRef="_c6e74b4e-ea93-46a3-943f-b64a7928a7b6"
+                             id="_020251b1-8ed4-489a-9b2c-2dfd5b98d504"/>
+      </cmmn:planItem>
+
+      <cmmn:sentry id="_c6e74b4e-ea93-46a3-943f-b64a7928a7b6">
+        <cmmn:planItemOnPart sourceRef="PI_b20f18b7-6ebe-45cb-a643-2e5ff2ecfd4e"
+                             id="_2ce53954-cc95-45c2-9e35-20f4d9ca6234">
+          <cmmn:standardEvent>complete</cmmn:standardEvent>
+        </cmmn:planItemOnPart>
+        <cmmn:ifPart contextRef="_498ab57b-8a86-4e8f-bf4c-173a00f52a7c" id="_e3a0da9c-81f5-478f-9af4-89ce41680582">
+          <cmmn:condition language="javascript" id="_8c51f36a-334e-466a-ac81-367f9fce9fbd">abc</cmmn:condition>
+        </cmmn:ifPart>
+      </cmmn:sentry>
+
+      <cmmn:task name="A" id="_b20f18b7-6ebe-45cb-a643-2e5ff2ecfd4e"/>
+      <cmmn:task name="B" id="_1df7f224-d649-4e2d-9323-e6e7a70908b2"/>
+
+    </cmmn:casePlanModel>
+
+    <cmmn:input />
+
+  </cmmn:case>
+  <cmmndi:CMMNDI>
+    <cmmndi:CMMNDiagram id="_2e623659-fd80-492e-89e6-52864baa281a">
+      <cmmndi:Size xsi:type="dc:Dimension" height="1050.0" width="1485.0"/>
+      <cmmndi:CMMNShape cmmnElementRef="_d0ac33e6-d3bc-4bda-b48c-4a7a96b5f051"
+                        id="_80e482d2-b17f-4d6a-b25c-5696a2dd4e71">
+        <dc:Bounds height="285.0" width="458.0" x="407.5" y="116.0"/>
+      </cmmndi:CMMNShape>
+      <cmmndi:CMMNShape cmmnElementRef="PI_b20f18b7-6ebe-45cb-a643-2e5ff2ecfd4e"
+                        id="_8ac72a46-601d-42bc-afb2-cdd22c9e0e2d">
+        <dc:Bounds height="76.0" width="97.0" x="453.0" y="161.0"/>
+      </cmmndi:CMMNShape>
+      <cmmndi:CMMNShape cmmnElementRef="PI_1df7f224-d649-4e2d-9323-e6e7a70908b2"
+                        id="_1cf7b75a-c96f-4c72-a219-8acc617758b9">
+        <dc:Bounds height="76.0" width="97.0" x="685.0" y="249.0"/>
+      </cmmndi:CMMNShape>
+      <cmmndi:CMMNShape cmmnElementRef="_020251b1-8ed4-489a-9b2c-2dfd5b98d504"
+                      id="_03dcab36-82c8-449d-a32f-234b31207b07">
+        <dc:Bounds height="28.0" width="20.0" x="675.2064208984375" y="273.0"/>
+      </cmmndi:CMMNShape>
+      <cmmndi:CMMNEdge cmmnElementRef="_2ce53954-cc95-45c2-9e35-20f4d9ca6234"
+                     targetCMMNElementRef="_020251b1-8ed4-489a-9b2c-2dfd5b98d504"
+                     id="C_2ce53954-cc95-45c2-9e35-20f4d9ca6234">
+        <di:waypoint xsi:type="dc:Point" x="677.2064208984375" y="287.0"/>
+        <di:waypoint xsi:type="dc:Point" x="614.0527954101562" y="287.0"/>
+        <di:waypoint xsi:type="dc:Point" x="614.0527954101562" y="199.0"/>
+        <di:waypoint xsi:type="dc:Point" x="550.8992309570312" y="199.0"/>
+      </cmmndi:CMMNEdge>
+      <cmmndi:CMMNShape cmmnElementRef="_498ab57b-8a86-4e8f-bf4c-173a00f52a7c" id="_e21d948c-de41-485f-98b7-fd41a50ce287">
+        <dc:Bounds height="40.0" width="34.0" x="481.5" y="183.0"/>
+      </cmmndi:CMMNShape>
+    </cmmndi:CMMNDiagram>
+  </cmmndi:CMMNDI>
+</cmmn:definitions>
+

@@ -1,0 +1,92 @@
+{
+  "name": "DC",
+  "uri": "http://www.omg.org/spec/CMMN/20150516/DC",
+  "types": [
+    {
+      "name": "rgb"
+    },
+    {
+      "name": "Real"
+    },
+  	{
+  	  "name": "Color",
+  	  "properties" : [
+  	  	{
+  	  	  "name": "red",
+  	  	  "type": "rgb",
+  	  	  "isAttr": true
+  	  	},
+  	  	{
+  	  	  "name": "green",
+  	  	  "type": "rgb",
+  	  	  "isAttr": true
+  	  	},
+  	  	{
+  	  	  "name": "blue",
+  	  	  "type": "rgb",
+  	  	  "isAttr": true
+  	  	}
+  	  ]
+  	},
+  	
+  	{
+  	  "name": "Point",
+  	  "properties" : [
+  	  	{
+  	  	  "name": "x",
+  	  	  "type": "Real",
+  	  	  "isAttr": true
+  	  	},
+  	  	{
+  	  	  "name": "y",
+  	  	  "type": "Real",
+  	  	  "isAttr": true
+  	  	}
+  	  ]
+  	},
+  	
+  	{
+  	  "name": "Dimension",
+  	  "properties" : [
+  	  	{
+  	  	  "name": "width",
+  	  	  "type": "Real",
+  	  	  "isAttr": true
+  	  	},
+  	  	{
+  	  	  "name": "height",
+  	  	  "type": "Real",
+  	  	  "isAttr": true
+  	  	}
+  	  ]
+  	},
+  	
+  	{
+  	  "name": "Bounds",
+  	  "properties" : [
+  	  	{
+  	  	  "name": "x",
+  	  	  "type": "Real",
+  	  	  "isAttr": true
+  	  	},
+  	  	{
+  	  	  "name": "y",
+  	  	  "type": "Real",
+  	  	  "isAttr": true
+  	  	},
+  	  	{
+  	  	  "name": "width",
+  	  	  "type": "Real",
+  	  	  "isAttr": true
+  	  	},
+  	  	{
+  	  	  "name": "height",
+  	  	  "type": "Real",
+  	  	  "isAttr": true
+  	  	}
+  	  ]
+  	}
+  ],
+  "prefix": "dc",
+  "associations": []
+}
