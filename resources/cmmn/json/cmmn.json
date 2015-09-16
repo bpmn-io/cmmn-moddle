@@ -369,7 +369,10 @@
       "properties": [
         {
           "name": "itemControl",
-          "type": "PlanItemControl"
+          "type": "PlanItemControl",
+          "xml": {
+            "serialize": "property"
+          }
         },
         {
           "name": "definitionRef",
@@ -583,7 +586,10 @@
         },
         {
           "name": "itemControl",
-          "type": "PlanItemControl"
+          "type": "PlanItemControl",
+          "xml": {
+            "serialize": "property"
+          }
         }
       ]
     },
@@ -621,7 +627,10 @@
         },
         {
           "name": "defaultControl",
-          "type": "PlanItemControl"
+          "type": "PlanItemControl",
+          "xml": {
+            "serialize": "property"
+          }
         }
       ]
     },
