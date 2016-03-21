@@ -1,9 +1,14 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<xsd:schema xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:cmmndi="http://www.omg.org/spec/CMMN/20150516/CMMNDI" xmlns:dc="http://www.omg.org/spec/CMMN/20150516/DC" xmlns:di="http://www.omg.org/spec/CMMN/20150516/DI" targetNamespace="http://www.omg.org/spec/CMMN/20150516/CMMNDI" elementFormDefault="qualified" attributeFormDefault="unqualified">
-
-	<xsd:import namespace="http://www.omg.org/spec/CMMN/20150516/DC" schemaLocation="DC.xsd"/>
-	<xsd:import namespace="http://www.omg.org/spec/CMMN/20150516/DI" schemaLocation="DI.xsd"/>	
-	
+<xsd:schema xmlns:xsd="http://www.w3.org/2001/XMLSchema" 
+            xmlns:cmmndi="http://www.omg.org/spec/CMMN/20151109/CMMNDI" 
+            xmlns:dc="http://www.omg.org/spec/CMMN/20151109/DC" 
+            xmlns:di="http://www.omg.org/spec/CMMN/20151109/DI" 
+            targetNamespace="http://www.omg.org/spec/CMMN/20151109/CMMNDI" 
+            elementFormDefault="qualified" attributeFormDefault="unqualified">
+	<xsd:import namespace="http://www.omg.org/spec/CMMN/20151109/DC" 
+                    schemaLocation="DC.xsd"/>
+	<xsd:import namespace="http://www.omg.org/spec/CMMN/20151109/DI"
+                    schemaLocation="DI.xsd"/>	
 	<xsd:element name="CMMNDI" type="cmmndi:CMMNDI"/>
 	<xsd:element name="CMMNDiagram" type="cmmndi:CMMNDiagram"/>
 	<xsd:element name="CMMNDiagramElement" type="di:DiagramElement">
@@ -15,14 +20,12 @@
 	<xsd:element name="CMMNEdge" type="cmmndi:CMMNEdge" substitutionGroup="cmmndi:CMMNDiagramElement"/>
 	<xsd:element name="CMMNStyle" type="cmmndi:CMMNStyle" substitutionGroup="di:Style"/>
 	<xsd:element name="CMMNLabel" type="cmmndi:CMMNLabel"/>
-	
 	<xsd:complexType name="CMMNDI">
 		<xsd:sequence>
 			<xsd:element ref="cmmndi:CMMNDiagram" minOccurs="0" maxOccurs="unbounded"/>
 			<xsd:element ref="cmmndi:CMMNStyle" minOccurs="0" maxOccurs="unbounded"/>
 		</xsd:sequence>
 	</xsd:complexType>
-
 	<xsd:complexType name="CMMNDiagram">
 		<xsd:complexContent>
 			<xsd:extension base="di:Diagram">
@@ -34,7 +37,6 @@
 			</xsd:extension>
 		</xsd:complexContent>
 	</xsd:complexType>
-	
 	<xsd:complexType name="CMMNShape">
 		<xsd:complexContent>
 			<xsd:extension base="di:Shape">
@@ -55,7 +57,7 @@
 				</xsd:sequence>
 				<xsd:attribute name="cmmnElementRef" type="xsd:QName"/>
 				<xsd:attribute name="sourceCMMNElementRef" type="xsd:QName"/>
-				<xsd:attribute name="targetCMMNElementRef" type="xsd:QName" use="required"/>
+				<xsd:attribute name="targetCMMNElementRef" type="xsd:QName"/>
 				<xsd:attribute name="isStandardEventVisible" type="xsd:boolean"/>
 			</xsd:extension>
 		</xsd:complexContent>

@@ -1,6 +1,12 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<xsd:schema xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:dc="http://www.omg.org/spec/CMMN/20150516/DC" xmlns:di="http://www.omg.org/spec/CMMN/20150516/DI" targetNamespace="http://www.omg.org/spec/CMMN/20150516/DI" elementFormDefault="qualified" attributeFormDefault="unqualified">
-	<xsd:import namespace="http://www.omg.org/spec/CMMN/20150516/DC" schemaLocation="DC.xsd"/>
+<xsd:schema xmlns:xsd="http://www.w3.org/2001/XMLSchema" 
+            xmlns:dc="http://www.omg.org/spec/CMMN/20151109/DC" 
+            xmlns:di="http://www.omg.org/spec/CMMN/20151109/DI"
+            targetNamespace="http://www.omg.org/spec/CMMN/20151109/DI"
+            elementFormDefault="qualified" 
+            attributeFormDefault="unqualified">
+	<xsd:import namespace="http://www.omg.org/spec/CMMN/20151109/DC" 
+                    schemaLocation="DC.xsd"/>
 	<xsd:annotation>
 		<xsd:documentation>The Diagram Interchange (DI) package enables interchange of graphical information that language users have control over, such as position of nodes and line routing points. Language specifications specialize elements of DI to define diagram interchange elements for a language.</xsd:documentation>
 	</xsd:annotation>

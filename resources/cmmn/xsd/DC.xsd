@@ -1,5 +1,9 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<xsd:schema xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:dc="http://www.omg.org/spec/CMMN/20150516/DC" targetNamespace="http://www.omg.org/spec/CMMN/20150516/DC" elementFormDefault="qualified" attributeFormDefault="unqualified">
+<xsd:schema xmlns:xsd="http://www.w3.org/2001/XMLSchema" 
+            xmlns:dc="http://www.omg.org/spec/CMMN/20151109/DC" 
+            targetNamespace="http://www.omg.org/spec/CMMN/20151109/DC" 
+            elementFormDefault="qualified" 
+            attributeFormDefault="unqualified">
     <xsd:element name="Color" type="dc:Color"/>
     <xsd:element name="Point" type="dc:Point"/>
     <xsd:element name="Bounds" type="dc:Bounds"/>
