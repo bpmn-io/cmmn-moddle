@@ -39,7 +39,7 @@ describe('cmmn-moddle - write', function() {
         });
 
         var expectedXML =
-          '<cmmn:humanTask xmlns:cmmn="http://www.omg.org/spec/CMMN/20150516/MODEL" id="HumanTask_1">' +
+          '<cmmn:humanTask xmlns:cmmn="http://www.omg.org/spec/CMMN/20151109/MODEL" id="HumanTask_1">' +
              '<cmmn:defaultControl />' + 
           '</cmmn:humanTask>';
 
@@ -63,7 +63,7 @@ describe('cmmn-moddle - write', function() {
         });
 
         var expectedXML =
-          '<cmmn:planItem xmlns:cmmn="http://www.omg.org/spec/CMMN/20150516/MODEL" id="PI_HumanTask_1">' +
+          '<cmmn:planItem xmlns:cmmn="http://www.omg.org/spec/CMMN/20151109/MODEL" id="PI_HumanTask_1">' +
              '<cmmn:itemControl />' + 
           '</cmmn:planItem>';
 
@@ -87,7 +87,7 @@ describe('cmmn-moddle - write', function() {
         });
 
         var expectedXML =
-          '<cmmn:discretionaryItem xmlns:cmmn="http://www.omg.org/spec/CMMN/20150516/MODEL" id="PI_HumanTask_1">' +
+          '<cmmn:discretionaryItem xmlns:cmmn="http://www.omg.org/spec/CMMN/20151109/MODEL" id="PI_HumanTask_1">' +
              '<cmmn:itemControl />' + 
           '</cmmn:discretionaryItem>';
 

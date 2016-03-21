@@ -25,8 +25,6 @@ describe('cmmn-moddle - edit', function() {
           return done(err);
         }
 
-        console.log(result.CMMNDI.diagrams[0].Size);
-
         result.cases[0].name = 'OTHER CASE';
 
         // when

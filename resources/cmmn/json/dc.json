@@ -1,6 +1,6 @@
 {
   "name": "DC",
-  "uri": "http://www.omg.org/spec/CMMN/20150516/DC",
+  "uri": "http://www.omg.org/spec/CMMN/20151109/DC",
   "types": [
     {
       "name": "rgb"

@@ -1,6 +1,6 @@
 {
   "name": "CMMNDI",
-  "uri": "http://www.omg.org/spec/CMMN/20150516/CMMNDI",
+  "uri": "http://www.omg.org/spec/CMMN/20151109/CMMNDI",
   "types": [
   	{
   	  "name": "CMMNDI",

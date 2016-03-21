@@ -1,6 +1,6 @@
 {
   "name": "CMMN",
-  "uri": "http://www.omg.org/spec/CMMN/20150516/MODEL",
+  "uri": "http://www.omg.org/spec/CMMN/20151109/MODEL",
   "types": [
     {
       "name": "ApplicabilityRule",
