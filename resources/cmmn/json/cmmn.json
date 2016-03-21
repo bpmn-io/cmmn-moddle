@@ -10,7 +10,10 @@
       "properties": [
         {
           "name": "condition",
-          "type": "Expression"
+          "type": "Expression",
+          "xml": {
+            "serialize": "property"
+          }
         },
         {
           "name": "contextRef",
@@ -33,7 +36,10 @@
       "properties": [
         {
           "name": "condition",
-          "type": "Expression"
+          "type": "Expression",
+          "xml": {
+            "serialize": "property"
+          }
         },
         {
           "name": "name",
@@ -75,11 +81,7 @@
         },
         {
           "name": "caseRoles",
-          "type": "Role",
-          "isMany": true,
-          "xml": {
-            "serialize": "property"
-          }
+          "type": "CaseRoles"
         },
         {
           "name": "input",
@@ -150,8 +152,7 @@
         },
         {
           "name": "children",
-          "type": "CaseFileItem",
-          "isMany": true,
+          "type": "Children",
           "xml": {
             "serialize": "property"
           }
@@ -225,7 +226,23 @@
         },
         {
           "name": "bindingRefinement",
-          "type": "Expression"
+          "type": "Expression",
+          "xml": {
+            "serialize": "property"
+          }
+        }
+      ]
+    },
+    {
+      "name": "CaseRoles",
+      "superClass": [
+        "Parameter"
+      ],
+      "properties": [
+        {
+          "name": "role",
+          "type": "Role",
+          "isMany": true
         }
       ]
     },
@@ -242,13 +259,29 @@
         },
         {
           "name": "caseRefExpression",
-          "type": "Expression"
+          "type": "Expression",
+          "xml": {
+            "serialize": "property"
+          }
         },
         {
           "name": "caseRef",
           "type": "Case",
           "isAttr": true,
           "isReference": true
+        }
+      ]
+    },
+    {
+      "name": "Children",
+      "superClass": [
+        "CMMNElement"
+      ],
+      "properties": [
+        {
+          "name": "caseFileItems",
+          "type": "CaseFileItem",
+          "isMany": true
         }
       ]
     },
@@ -453,7 +486,10 @@
         },
         {
           "name": "condition",
-          "type": "Expression"
+          "type": "Expression",
+          "xml": {
+            "serialize": "property"
+          }
         }
       ]
     },
@@ -535,7 +571,10 @@
         },
         {
           "name": "transformation",
-          "type": "Expression"
+          "type": "Expression",
+          "xml": {
+            "serialize": "property"
+          }
         }
       ]
     },
@@ -651,12 +690,6 @@
           "isReference": true
         },
         {
-          "name": "sentryRef",
-          "type": "Sentry",
-          "isAttr": true,
-          "isReference": true
-        },
-        {
           "name": "exitCriterionRef",
           "type": "ExitCriterion",
           "isAttr": true,
@@ -741,7 +774,10 @@
         },
         {
           "name": "processRefExpression",
-          "type": "Expression"
+          "type": "Expression",
+          "xml": {
+            "serialize": "property"
+          }
         },
         {
           "name": "processRef",
@@ -778,7 +814,10 @@
       "properties": [
         {
           "name": "condition",
-          "type": "Expression"
+          "type": "Expression",
+          "xml": {
+            "serialize": "property"
+          }
         },
         {
           "name": "name",
@@ -801,7 +840,10 @@
       "properties": [
         {
           "name": "condition",
-          "type": "Expression"
+          "type": "Expression",
+          "xml": {
+            "serialize": "property"
+          }
         },
         {
           "name": "name",
@@ -886,11 +928,6 @@
       ],
       "properties": [
         {
-          "name": "planningTable",
-          "type": "PlanningTable",
-          "isAttr": true
-        },
-        {
           "name": "authorizedRoleRefs",
           "type": "Role",
           "isAttr": true,
@@ -913,14 +950,20 @@
       ],
       "properties": [
         {
-          "name": "inputs",
+          "name": "input",
           "type": "CaseParameter",
-          "isMany": true
+          "isMany": true,
+          "xml": {
+            "serialize": "property"
+          }
         },
         {
-          "name": "outputs",
+          "name": "output",
           "type": "CaseParameter",
-          "isMany": true
+          "isMany": true,
+          "xml": {
+            "serialize": "property"
+          }
         },
         {
           "name": "isBlocking",
@@ -938,7 +981,10 @@
       "properties": [
         {
           "name": "timerExpression",
-          "type": "Expression"
+          "type": "Expression",
+          "xml": {
+            "serialize": "property"
+          }
         },
         {
           "name": "timerStart",
@@ -951,7 +997,14 @@
       "superClass": [
         "EventListener"
       ],
-      "properties": []
+      "properties": [
+        {
+          "name": "authorizedRoleRefs",
+          "type": "Role",
+          "isMany": true,
+          "isAttr": true
+        }
+      ]
     },
     {
       "name": "DateTime",
@@ -1090,13 +1143,11 @@
         },
         {
           "name": "source",
-          "isAttr": true,
           "isMany": true,
           "type": "Element"
         },
         {
           "name": "target",
-          "isAttr": true,
           "isMany": true,
           "type": "Element"
         }
@@ -1140,7 +1191,10 @@
         },
         {
           "name": "decisionRefExpression",
-          "type": "Expression"
+          "type": "Expression",
+          "xml": {
+            "serialize": "property"
+          }
         }
       ]
     },
@@ -1158,17 +1212,24 @@
         {
           "name": "implementationType",
           "type": "String",
-          "isAttr": true
+          "isAttr": true,
+          "default": "http://www.omg.org/spec/CMMN/DecisionType/Unspecified"
         },
         {
-          "name": "inputs",
+          "name": "input",
           "type": "DecisionParameter",
-          "isMany": true
+          "isMany": true,
+          "xml": {
+            "serialize": "property"
+          }
         },
         {
-          "name": "outputs",
+          "name": "output",
           "type": "DecisionParameter",
-          "isMany": true
+          "isMany": true,
+          "xml": {
+            "serialize": "property"
+          }
         },
         {
           "name": "externalRef",
