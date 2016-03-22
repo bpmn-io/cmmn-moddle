@@ -1,0 +1,22 @@
+<?xml version="1.0" encoding="UTF-8" standalone="yes"?>
+<cmmn:definitions id="test"
+                  targetNamespace="http://bpmn.io/schema/cmmn"
+                  xmlns:cmmn="http://www.omg.org/spec/CMMN/20151109/MODEL"
+                  xmlns:vendor="http://vendor"
+                  xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
+
+  <cmmn:case name="Artifacts" id="Case_1">
+    <cmmn:casePlanModel id="CasePlanModel_1">
+      <cmmn:planItem definitionRef="HumanTask_1" id="PI_HumanTask_1"/>
+      <cmmn:humanTask name="A" id="HumanTask_1"/>
+    </cmmn:casePlanModel>
+  </cmmn:case>
+
+  <cmmn:textAnnotation id="TextAnnotation_1">
+    <cmmn:text>This is a text annotation</cmmn:text>
+  </cmmn:textAnnotation>
+  <cmmn:association id="Association_1" sourceRef="PI_HumanTask_1" targetRef="TextAnnotation_1" />
+  <cmmn:association id="Association_2" associationDirection="One" />
+
+</cmmn:definitions>
+

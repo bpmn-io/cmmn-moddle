@@ -29,6 +29,56 @@
       ]
     },
     {
+      "name": "Artifact",
+      "isAbstract": true,
+      "superClass": [
+        "CMMNElement"
+      ]
+    },
+    {
+      "name": "Association",
+      "superClass": [
+        "Artifact"
+      ],
+      "properties": [
+        {
+          "name": "associationDirection",
+          "type": "AssociationDirection",
+          "isAttr": true
+        },
+        {
+          "name": "sourceRef",
+          "type": "CMMNElement",
+          "isAttr": true,
+          "isReference": true
+        },
+        {
+          "name": "targetRef",
+          "type": "CMMNElement",
+          "isAttr": true,
+          "isReference": true
+        }
+      ]
+    },
+    {
+      "name": "TextAnnotation",
+      "superClass": [
+        "Artifact"
+      ],
+      "properties": [
+        {
+          "name": "text",
+          "type": "String"
+        },
+        {
+          "name": "textFormat",
+          "default": "text/plain",
+          "isAttr": true,
+          "type": "String"
+        }
+      ]
+    },
+    {
       "name": "ManualActivationRule",
       "superClass": [
         "CMMNElement"
@@ -386,6 +436,11 @@
         {
           "name": "relationships",
           "type": "Relationship",
+          "isMany": true
+        },
+        {
+          "name": "artifacts",
+          "type": "Artifact",
           "isMany": true
         },
         {
@@ -1278,6 +1333,20 @@
     }
   ],
   "emumerations": [
+    {
+      "name": "AssociationDirection",
+      "literalValues": [
+        {
+          "name": "None"
+        },
+        {
+          "name": "One"
+        },
+        {
+          "name": "Both"
+        }
+      ]
+    },
     {
       "name": "CaseFileItemTransition",
       "literalValues": [

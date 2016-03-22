@@ -101,6 +101,67 @@ describe('cmmn-moddle - write', function() {
         });
       });
 
+
+      it('Definitions', function(done) {
+
+        // given
+        var planItem = moddle.create('cmmn:PlanItem', {
+          id: 'PlanItem_1'
+        });
+
+        var textAnnotation = moddle.create('cmmn:TextAnnotation', {
+          id: 'TextAnnotation_1',
+          text: 'FOOBAR'
+        });
+
+        var definitionsElement = moddle.create('cmmn:Definitions', {
+          cases: [
+            moddle.create('cmmn:Case', {
+              casePlanModel: moddle.create('cmmn:Stage', {
+                planItems: [
+                  planItem
+                ]
+              })
+            })
+          ],
+          artifacts: [
+            textAnnotation,
+            moddle.create('cmmn:Association', {
+              id: 'Association_1',
+              sourceRef: planItem,
+              targetRef: textAnnotation
+            }),
+            moddle.create('cmmn:Association', {
+              id: 'Association_2',
+              associationDirection: 'One',
+            })
+          ]
+        });
+
+        var expectedXML =
+          '<cmmn:definitions xmlns:cmmn="http://www.omg.org/spec/CMMN/20151109/MODEL">' +
+             '<cmmn:case>' +
+               '<cmmn:casePlanModel>' +
+                 '<cmmn:planItem id="PlanItem_1" />' +
+               '</cmmn:casePlanModel>' +
+             '</cmmn:case>' +
+             '<cmmn:textAnnotation id="TextAnnotation_1">' +
+               '<cmmn:text>FOOBAR</cmmn:text>' +
+             '</cmmn:textAnnotation>' +
+             '<cmmn:association id="Association_1" sourceRef="PlanItem_1" targetRef="TextAnnotation_1" />' +
+             '<cmmn:association id="Association_2" associationDirection="One" />' +
+          '</cmmn:definitions>';
+
+        // when
+        write(definitionsElement, function(err, result) {
+
+          // then
+          expect(result).to.eql(expectedXML);
+
+          done(err);
+        });
+      });
+
     });
 
   });

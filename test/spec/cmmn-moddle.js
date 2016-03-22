@@ -46,6 +46,22 @@ describe('cmmn-moddle', function() {
     });
 
 
+    it('should create Association', function() {
+      var association = moddle.create('cmmn:Association');
+
+      expect(association.$type).to.eql('cmmn:Association');
+      expect(association.$instanceOf('cmmn:CMMNElement')).to.be.true;
+    });
+
+
+    it('should create TextAnnotation', function() {
+      var textAnnotation = moddle.create('cmmn:TextAnnotation');
+
+      expect(textAnnotation.$type).to.eql('cmmn:TextAnnotation');
+      expect(textAnnotation.$instanceOf('cmmn:CMMNElement')).to.be.true;
+    });
+
+
     describe('defaults', function() {
 
       it('should init CaseFileItem', function() {

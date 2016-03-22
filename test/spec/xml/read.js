@@ -47,6 +47,40 @@ describe('cmmn-moddle - read', function() {
         });
       });
 
+      it('Artifacts', function(done) {
+
+        // when
+        fromFile('test/fixtures/cmmn/artifacts.cmmn', function(err, result) {
+
+          expect(result.artifacts).to.jsonEqual([
+            {
+              $type: 'cmmn:TextAnnotation',
+              id: 'TextAnnotation_1',
+              text: 'This is a text annotation'
+            },
+            {
+              $type: 'cmmn:Association',
+              id: 'Association_1'
+            },
+            {
+              $type: 'cmmn:Association',
+              id: 'Association_2',
+              associationDirection: 'One'
+            }
+          ]);
+
+          var planItem = result.cases[0].casePlanModel.planItems[0];
+          var textAnnotation = result.artifacts[0];
+          var association = result.artifacts[1];
+
+          expect(association.sourceRef).to.jsonEqual(planItem);
+          expect(association.targetRef).to.jsonEqual(textAnnotation);
+
+          done(err);
+        });
+
+      });
+
     });
 
     describe('references', function() {
