@@ -24,7 +24,8 @@
         {
           "name": "id",
           "type": "String",
-          "isAttr": true
+          "isAttr": true,
+          "isId": true
         }
       ]
     },
