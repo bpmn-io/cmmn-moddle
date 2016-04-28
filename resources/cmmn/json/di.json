@@ -93,6 +93,12 @@
         {
           "name": "extension",
           "type": "Extension"
+        },
+        {
+          "name": "id",
+          "type": "String",
+          "isAttr": true,
+          "isId": true
         }
       ]
     },
