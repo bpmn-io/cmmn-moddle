@@ -16,7 +16,7 @@ module.exports = function(grunt) {
 
     jshint: {
       src: [
-        ['<%=config.sources %>']
+        '<%=config.sources %>'
       ],
       gruntfile: [
         'Gruntfile.js'
