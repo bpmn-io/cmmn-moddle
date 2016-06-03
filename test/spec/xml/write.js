@@ -59,12 +59,20 @@ describe('cmmn-moddle - write', function() {
         var control = moddle.create('cmmn:PlanItemControl');
         var planItem = moddle.create('cmmn:PlanItem', {
           id: 'PI_HumanTask_1',
-          itemControl: control
+          itemControl: control,
+          entryCriteria: [
+            moddle.create('cmmn:EntryCriterion')
+          ],
+          exitCriteria: [
+            moddle.create('cmmn:ExitCriterion')
+          ]
         });
 
         var expectedXML =
           '<cmmn:planItem xmlns:cmmn="http://www.omg.org/spec/CMMN/20151109/MODEL" id="PI_HumanTask_1">' +
              '<cmmn:itemControl />' + 
+             '<cmmn:entryCriterion />' +
+             '<cmmn:exitCriterion />' +
           '</cmmn:planItem>';
 
         // when

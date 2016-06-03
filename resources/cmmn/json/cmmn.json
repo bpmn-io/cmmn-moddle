@@ -670,6 +670,13 @@
           "isReference": true
         },
         {
+          "name": "itemControl",
+          "type": "PlanItemControl",
+          "xml": {
+            "serialize": "property"
+          }
+        },
+        {
           "name": "entryCriteria",
           "type": "EntryCriterion",
           "isMany": true
@@ -678,13 +685,6 @@
           "name": "exitCriteria",
           "type": "ExitCriterion",
           "isMany": true
-        },
-        {
-          "name": "itemControl",
-          "type": "PlanItemControl",
-          "xml": {
-            "serialize": "property"
-          }
         }
       ]
     },
