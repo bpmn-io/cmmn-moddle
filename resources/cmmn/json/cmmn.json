@@ -1217,8 +1217,8 @@
       "properties": [
         {
           "name": "text",
-          "isAttr": true,
-          "type": "String"
+          "type": "String",
+          "isBody": true
         },
         {
           "name": "textFormat",
