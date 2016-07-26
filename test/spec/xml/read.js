@@ -123,4 +123,24 @@ describe('cmmn-moddle - read', function() {
 
   });
 
+
+  describe('should handle errors', function() {
+
+    it('when importing duplicate ids', function(done) {
+
+      // when
+      fromFile('test/fixtures/cmmn/error/duplicate-ids.cmmn', function(err, result, context) {
+
+        var warnings = context.warnings;
+
+        expect(err).not.to.exist;
+        expect(warnings.length).to.eql(1);
+        expect(warnings[0].message).to.contain('duplicate ID <test>');
+
+        done();
+      });
+    });
+
+  });
+
 });

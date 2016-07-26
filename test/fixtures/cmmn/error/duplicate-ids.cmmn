@@ -1,0 +1,7 @@
+<?xml version="1.0" encoding="UTF-8" standalone="yes"?>
+<cmmn:definitions id="test"
+                  targetNamespace="http://bpmn.io/schema/cmmn"
+                  xmlns:cmmn="http://www.omg.org/spec/CMMN/20151109/MODEL">
+  <cmmn:case id="test"></cmmn:case>
+</cmmn:definitions>
+
