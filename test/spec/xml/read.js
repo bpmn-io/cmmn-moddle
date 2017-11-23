@@ -1,11 +1,7 @@
 'use strict';
 
-var os = require('os');
+var Helper = require('../../helper');
 
-var XMLHelper = require('../../xml-helper'),
-    Helper = require('../../helper');
-
-var toXML = XMLHelper.toXML;
 
 describe('cmmn-moddle - read', function() {
 

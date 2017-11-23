@@ -28,13 +28,13 @@ module.exports.validate = function(err, xml, done) {
   }
 
   SchemaValidator.validateXML(xml, CMMN_XSD
-  , function(err, result) {
+    , function(err, result) {
 
-    if (err) {
-      return done(err);
-    }
+      if (err) {
+        return done(err);
+      }
 
-    expect(result.valid).to.be.true;
-    done();
-  });
+      expect(result.valid).to.be.true;
+      done();
+    });
 };
