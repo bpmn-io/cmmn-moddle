@@ -3,7 +3,8 @@
 var XMLHelper = require('../../xml-helper'),
     Helper = require('../../helper');
 
-var toXML = XMLHelper.toXML;
+var toXML = XMLHelper.toXML,
+    validate = XMLHelper.validate;
 
 
 describe('cmmn-moddle - edit', function() {
@@ -30,6 +31,29 @@ describe('cmmn-moddle - edit', function() {
 
           done(err);
         });
+      });
+
+    });
+
+  });
+
+
+  describe('open and save', function() {
+
+    it('should valid diagram', function(done) {
+
+      // given
+      fromFile('test/fixtures/cmmn/roundtrip.cmmn', function(err, result) {
+
+        if (err) {
+          return done(err);
+        }
+
+        // when
+        toXML(result, { format: true }, function(err, xml) {
+          validate(err, xml, done);
+        });
+
       });
 
     });

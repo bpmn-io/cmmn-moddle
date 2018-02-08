@@ -2,7 +2,7 @@
 
 var SchemaValidator = require('xsd-schema-validator');
 
-var CMMN_XSD = 'test/fixtures/xsd/CMMN11.xsd';
+var CMMN_XSD = 'resources/cmmn/xsd/CMMN11.xsd';
 
 var Helper = require('./helper');
 
