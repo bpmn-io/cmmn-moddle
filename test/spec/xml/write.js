@@ -40,7 +40,7 @@ describe('cmmn-moddle - write', function() {
 
         var expectedXML =
           '<cmmn:humanTask xmlns:cmmn="http://www.omg.org/spec/CMMN/20151109/MODEL" id="HumanTask_1">' +
-             '<cmmn:defaultControl />' + 
+             '<cmmn:defaultControl />' +
           '</cmmn:humanTask>';
 
         // when
@@ -70,7 +70,7 @@ describe('cmmn-moddle - write', function() {
 
         var expectedXML =
           '<cmmn:planItem xmlns:cmmn="http://www.omg.org/spec/CMMN/20151109/MODEL" id="PI_HumanTask_1">' +
-             '<cmmn:itemControl />' + 
+             '<cmmn:itemControl />' +
              '<cmmn:entryCriterion />' +
              '<cmmn:exitCriterion />' +
           '</cmmn:planItem>';
@@ -96,7 +96,7 @@ describe('cmmn-moddle - write', function() {
 
         var expectedXML =
           '<cmmn:discretionaryItem xmlns:cmmn="http://www.omg.org/spec/CMMN/20151109/MODEL" id="PI_HumanTask_1">' +
-             '<cmmn:itemControl />' + 
+             '<cmmn:itemControl />' +
           '</cmmn:discretionaryItem>';
 
         // when

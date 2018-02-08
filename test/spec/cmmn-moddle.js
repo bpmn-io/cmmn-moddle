@@ -82,35 +82,35 @@ describe('cmmn-moddle', function() {
         var definitions = moddle.create('cmmn:Definitions');
 
         expect(definitions.expressionLanguage).to.eql('http://www.w3.org/1999/XPath');
-      });      
+      });
 
 
       it('should init Process', function() {
         var process = moddle.create('cmmn:Process');
 
         expect(process.implementationType).to.eql('http://www.omg.org/spec/CMMN/ProcessType/Unspecified');
-      });        
+      });
 
 
       it('should init Property', function() {
         var property = moddle.create('cmmn:Property');
 
         expect(property.type).to.eql('http://www.omg.org/spec/CMMN/PropertyType/Unspecified');
-      });        
+      });
 
 
       it('should init Task', function() {
         var task = moddle.create('cmmn:Task');
 
         expect(task.isBlocking).to.eql(true);
-      });  
+      });
 
 
       it('should init Documentation', function() {
         var documentation = moddle.create('cmmn:Documentation');
 
         expect(documentation.textFormat).to.eql('text/plain');
-      });  
+      });
 
     });
 
