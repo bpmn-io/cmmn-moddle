@@ -21,9 +21,6 @@ describe('cmmn-moddle - edit', function() {
 
       // given
       fromFile('test/fixtures/cmmn/simple.cmmn', function(err, result) {
-        if (err) {
-          return done(err);
-        }
 
         result.cases[0].name = 'OTHER CASE';
 
