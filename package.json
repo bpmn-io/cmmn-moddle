@@ -1,6 +1,6 @@
 {
   "name": "cmmn-moddle",
-  "version": "2.1.1",
+  "version": "3.0.0",
   "description": "A moddle wrapper for CMMN 1.1",
   "scripts": {
     "all": "run-s lint test",
