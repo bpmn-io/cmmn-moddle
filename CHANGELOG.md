@@ -6,6 +6,10 @@ All notable changes to [cmmn-moddle](https://github.com/bpmn-io/cmmn-moddle) are
 
 ___Note:__ Yet to be released changes appear here._
 
+## 4.0.0
+
+* `FEAT`: encode entities in body properties (rather than using CDATA escaping)
+
 ## 3.0.0
 
 * `FIX`: properly decode `text` entities
