@@ -1,12 +1,13 @@
-'use strict';
+import expect from '../expect';
 
-var Helper = require('../helper');
-
-var moddle = Helper.createModdle();
+import {
+  createModdle
+} from '../helper';
 
 
 describe('cmmn-moddle', function() {
 
+  var moddle = createModdle();
 
   describe('parsing', function() {
 

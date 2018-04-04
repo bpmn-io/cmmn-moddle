@@ -1,18 +1,22 @@
-'use strict';
+import expect from '../../expect';
 
-var XMLHelper = require('../../xml-helper'),
-    Helper = require('../../helper');
+import {
+  createModdle
+} from '../../helper';
 
-var toXML = XMLHelper.toXML,
-    validate = XMLHelper.validate;
+import {
+  fromFile as readFromFile,
+  validate,
+  toXML
+} from '../../xml-helper';
 
 
 describe('cmmn-moddle - edit', function() {
 
-  var moddle = Helper.createModdle();
+  var moddle = createModdle();
 
   function fromFile(file, done) {
-    XMLHelper.fromFile(moddle, file, done);
+    readFromFile(moddle, file, done);
   }
 
 
