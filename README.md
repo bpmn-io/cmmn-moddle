@@ -15,7 +15,7 @@ __cmmn-moddle__ uses the [CMMN 1.1 meta-model](http://www.omg.org/spec/CMMN/) to
 Get the library via [npm package](https://www.npmjs.org/package/cmmn-moddle). Bundle it for the web using [browserify](http://browserify.org) or [webpack](https://webpack.github.io).
 
 ```javascript
-var CmmnModdle = require('cmmn-moddle');
+import CmmnModdle from 'cmmn-moddle';
 
 var moddle = new CmmnModdle();
 
