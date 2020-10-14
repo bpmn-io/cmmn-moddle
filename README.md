@@ -3,7 +3,7 @@
 
 # cmmn-moddle
 
-[![Build Status](https://travis-ci.org/bpmn-io/cmmn-moddle.svg?branch=master)](https://travis-ci.org/bpmn-io/cmmn-moddle)
+[![Build Status](https://travis-ci.com/bpmn-io/cmmn-moddle.svg?branch=master)](https://travis-ci.com/bpmn-io/cmmn-moddle)
 
 Read and write CMMN 1.1 diagram files in NodeJS and the browser.
 
